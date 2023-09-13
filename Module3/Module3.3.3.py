@@ -12,11 +12,11 @@ def sort_max(arg1):
                     if var1 < i:
                         var1 = i
                 elif len(str(i)) > len(str(var1)):
-                    x = int(str(var1) + (len(str(i)) - len(str(var1))) * '0')
+                    x = int(str(var1) + (len(str(i)) - len(str(var1))) * '9')
                     if x < i:
                         var1 = i
                 elif len(str(i)) < len(str(var1)):
-                    x = int(str(i) + (len(str(var1)) - len(str(i))) * '0')
+                    x = int(str(i) + (len(str(var1)) - len(str(i))) * '9')
                     if var1 < x:
                         var1 = i
         for i in range(arg1.count(var1)):
