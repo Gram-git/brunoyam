@@ -28,3 +28,37 @@ def sort_max(arg1):
 
 print(m)
 print(sort_max(m))
+
+
+def largestNumber(nums):
+    # Преобразование чисел в строки
+    nums = [str(num) for num in nums]
+
+    # Функция сравнения для сортировки
+    def custom_compare(x, y):
+        return int(x + y) - int(y + x)
+
+    # Реализация сортировки пузырьком
+    n = len(nums)
+    for i in range(n):
+        for j in range(n - i - 1):
+            if custom_compare(nums[j], nums[j + 1]) < 0:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+
+    # Объединение отсортированных чисел в строку
+    result = ''.join(nums)
+
+    # Удаление ведущих нулей
+    result = result.lstrip('0')
+
+    # Если строка пуста (все числа были нулями), вернуть '0'
+    if not result:
+        return '0'
+
+    return result
+
+
+# Пример использования
+nums = [56, 9, 11, 2, 45, 9, 91, 54, 56, 5]
+result = largestNumber(nums)
+print(result)  # Вывод: '956211'

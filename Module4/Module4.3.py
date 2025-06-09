@@ -8,8 +8,7 @@ graph = {
 }
 
 
-def bfs(graph, start, visited = [],queue = []):
-
+def bfs(graph, start, visited=[], queue=[]):
     visited.append(start)
     queue.append(start)
 
@@ -19,5 +18,6 @@ def bfs(graph, start, visited = [],queue = []):
                 visited.append(i)
                 queue.append(i)
     return visited
+
 
 print(f"Поиск в ширину: {bfs(graph, '1')}")
