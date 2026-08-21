@@ -19,10 +19,11 @@ class Model:
 
 
 class Post(Model):
-    title = 1
-    text = 2
-    author = 3
+    def __init__(self, title, text, author):
+        self.title = title
+        self.text = text
+        self.author = author
 
 
-post = Post()
+post = Post('title', 'text', 'autor')
 post.save("post.json")
